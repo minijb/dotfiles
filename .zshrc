@@ -55,4 +55,4 @@ bindkey -s ^a "nvims\n"
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
-
+# export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
