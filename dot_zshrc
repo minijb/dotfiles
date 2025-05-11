@@ -38,3 +38,6 @@ zinit light-mode for \
 # plugins
 zinit load zsh-users/zsh-syntax-highlighting
 zinit load zsh-users/zsh-autosuggestions
+
+# Created by `pipx` on 2025-04-25 14:44:59
+export PATH="$PATH:/home/zhouhao/.local/bin"

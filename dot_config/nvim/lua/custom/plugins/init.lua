@@ -1,7 +1,3 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
---
--- See the kickstart.nvim README for more information
 return {
   {
     'hedyhli/outline.nvim',
@@ -86,5 +82,32 @@ return {
       vim.opt.termguicolors = true
       require('bufferline').setup {}
     end,
+  },
+  {
+    'kawre/leetcode.nvim',
+    build = ':TSUpdate html', -- if you have `nvim-treesitter` installed
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      -- 'ibhagwan/fzf-lua',
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+    },
+    opts = {
+      cn = {
+        enabled = true,
+      },
+      injector = { ---@type table<lc.lang, lc.inject>
+        ['python3'] = {
+          before = true,
+        },
+        ['cpp'] = {
+          before = { '#include <bits/stdc++.h>', 'using namespace std;' },
+          after = 'int main() {}',
+        },
+        ['java'] = {
+          before = 'import java.util.*;',
+        },
+      },
+    },
   },
 }
